@@ -13,8 +13,8 @@ cnt_up = 0
 cnt_down = 0
 
 # Fuente de video
-# cap = cv2.VideoCapture(0)
-cap = cv2.VideoCapture('/home/pi/Videos/People-Walking-Shot-From-Above.mp4')
+#cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('RpiVid.mp4')
 
 # Check if camera opened successfully
 if (cap.isOpened() is False):
@@ -28,7 +28,7 @@ print("Frame Width, Height = ", width, ",", height)
 # Define the codec and create VideoWriter object
 fourcc = cv2.VideoWriter_fourcc(*'MP4V')
 fourcc = cv2.VideoWriter_fourcc('M', 'P', '4', 'V')
-out = cv2.VideoWriter('videos/output.mp4', fourcc, 20.0, (int(width), int(height)))                     #noqa
+out = cv2.VideoWriter('output.mp4', fourcc, 20.0, (int(width), int(height)))                     #noqa
 
 # Propiedades del video
 # cap.set(3, 160) # Width
@@ -41,7 +41,7 @@ for i in range(19):
 w = cap.get(3)
 h = cap.get(4)
 frameArea = h*w
-areaTH = frameArea/250
+areaTH = frameArea/110
 print('Area Threshold', areaTH)
 
 # Lineas de entrada/salida
